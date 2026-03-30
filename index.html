@@ -487,12 +487,12 @@
             </div>
         </div>
         <div class="copyright">
-            © 2025 أفق تك — جميع الحقوق محفوظة. تم تصميم الموقع بكل بساطة واحترافية.
+            © 2026 أفق تك — جميع الحقوق محفوظة. تم تصميم الموقع بكل بساطة واحترافية.
         </div>
     </div>
 </footer>
 
-<!-- analytics tracker (as requested) -->
+<!-- Analytics tracker script - placed before closing body tag as requested -->
 <script src="https://mayor-cloud.com/analytics/tracker.js" data-site-key="kseNIdKhWPwjRLlLsVvbdB0g1z27Jysu5I5oAPkS24" defer></script>
 
 <!-- main interactive javascript (inline) -->
@@ -597,7 +597,6 @@
         
         if (exploreButton) {
             exploreButton.addEventListener('click', () => {
-                // subtle alert replacement: modern toast simulation using alert? we can create a small floating notif
                 showFloatingMessage("✨ جاهز للانطلاق! استعد لتجربة رقمية مبتكرة", "#1e5a4c");
             });
         }
@@ -665,17 +664,17 @@
             });
         });
         
-        // Dynamic year for footer (just to be modern)
+        // Dynamic year for footer
         const copyrightDiv = document.querySelector('.copyright');
         if (copyrightDiv) {
             const currentYear = new Date().getFullYear();
-            if (copyrightDiv.innerText.includes('2025')) {
-                copyrightDiv.innerText = copyrightDiv.innerText.replace('2025', currentYear);
+            if (copyrightDiv.innerText.includes('2026')) {
+                copyrightDiv.innerText = copyrightDiv.innerText.replace('2026', currentYear);
             }
         }
         
-        // Extra: log that analytics is loaded alongside (just for dev awareness)
-        console.log("موقع بسيط يعمل بكفاءة مع تحليلات Mayor Cloud (tracker متضمن)");
+        // Log that analytics script is placed before body closing tag
+        console.log("✅ موقع بسيط يعمل بكفاءة | Analytics script موجود قبل إغلاق body");
     })();
 </script>
 </body>
