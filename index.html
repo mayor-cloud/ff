@@ -1,17 +1,17 @@
-<link rel="stylesheet" href="https://mayor-cloud.com/static/captcha/widget.css?v=20260330-3">
-
 <div id="mayor-captcha"></div>
-<input type="hidden" id="captcha_token" name="captcha_token">
-
-<script src="https://mayor-cloud.com/static/captcha/widget.js?v=20260330-3"></script>
+<input type="hidden" name="captcha_token" id="captcha_token" />
+<p id="captcha_status" style="margin-top:8px;font-size:13px;color:#9ca3af"></p>
+<script src="https://mayor-cloud.com/static/captcha/widget.js"></script>
 <script>
   MayorCaptcha.render('#mayor-captcha', {
     assetBase: 'https://mayor-cloud.com',
     apiBase: 'https://mayor-cloud.com/api/captcha/v1',
-    siteKey: 'YOUR_SITE_KEY',
+    siteKey: 'j3RYzdyLOl7oWNcZRZenKHUv2IHH3VhL9J3iy8tVGro',
     theme: 'light',
     callback: function(token) {
       document.getElementById('captcha_token').value = token;
+      var statusEl = document.getElementById('captcha_status');
+      if (statusEl) statusEl.textContent = 'Captcha verified.';
     }
   });
 </script>
