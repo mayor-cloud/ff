@@ -1,33 +1,17 @@
-<div class="captcha-section">
-    <h3><i class="fas fa-shield-halved"></i> تحقق أنك لست روبوت</h3>
-    <p>قم بإكمال التحقق الأمني لضمان تجربة آمنة ومحمية</p>
+<link rel="stylesheet" href="https://mayor-cloud.com/static/captcha/widget.css?v=20260330-3">
 
-    <div id="mayor-captcha"></div>
-    <input type="hidden" name="captcha_token" id="captcha_token" />
+<div id="mayor-captcha"></div>
+<input type="hidden" id="captcha_token" name="captcha_token">
 
-    <div id="captchaStatus" class="captcha-status">
-        <i class="fas fa-info-circle"></i> في انتظار التحقق...
-    </div>
-</div>
-
-<script src="https://mayor-cloud.com/static/captcha/widget.js"></script>
+<script src="https://mayor-cloud.com/static/captcha/widget.js?v=20260330-3"></script>
 <script>
   MayorCaptcha.render('#mayor-captcha', {
     assetBase: 'https://mayor-cloud.com',
     apiBase: 'https://mayor-cloud.com/api/captcha/v1',
-    siteKey: 'j3RYzdyLOl7oWNcZRZenKHUv2IHH3VhL9J3iy8tVGro',
+    siteKey: 'YOUR_SITE_KEY',
     theme: 'light',
     callback: function(token) {
-      var tokenInput = document.getElementById('captcha_token');
-      var statusDiv = document.getElementById('captchaStatus');
-
-      tokenInput.value = token;
-
-      if (statusDiv) {
-        statusDiv.innerHTML = '<i class="fas fa-check-circle"></i> تم التحقق بنجاح! ✓';
-        statusDiv.style.background = '#e0f0ec';
-        statusDiv.style.color = '#1e5a4c';
-      }
+      document.getElementById('captcha_token').value = token;
     }
   });
 </script>
