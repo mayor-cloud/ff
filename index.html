@@ -4,17 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>منصة بسيطة | حلول رقمية مبتكرة</title>
-    <!-- Google Fonts: Arabic + Modern Sans -->
+    
+    <!-- Mayor Captcha Widget -->
+    <script src="https://mayor-cloud.com/static/captcha/widget.js"></script>
+    
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
-    <!-- Font Awesome 6 (Free Icons) -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: 'Inter', sans-serif;
             background: linear-gradient(145deg, #f8fafc 0%, #eff3f8 100%);
@@ -22,15 +26,11 @@
             line-height: 1.5;
             scroll-behavior: smooth;
         }
-
-        /* custom container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 24px;
         }
-
-        /* header & navigation */
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -39,7 +39,6 @@
             padding: 20px 0;
             border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
-
         .logo {
             font-size: 1.8rem;
             font-weight: 800;
@@ -49,20 +48,16 @@
             color: transparent;
             letter-spacing: -0.3px;
         }
-
         .logo i {
-            background: none;
             color: #2b7a62;
             margin-left: 8px;
             font-size: 1.6rem;
         }
-
         .nav-links {
             display: flex;
             gap: 32px;
             list-style: none;
         }
-
         .nav-links a {
             text-decoration: none;
             font-weight: 500;
@@ -70,13 +65,10 @@
             transition: 0.2s;
             font-size: 1rem;
         }
-
         .nav-links a:hover {
             color: #2b7a62;
             transform: translateY(-1px);
         }
-
-        /* hero section */
         .hero {
             display: flex;
             flex-wrap: wrap;
@@ -85,12 +77,10 @@
             gap: 40px;
             padding: 60px 0 40px;
         }
-
         .hero-content {
             flex: 1;
             min-width: 260px;
         }
-
         .hero-badge {
             background: #e0f0ec;
             display: inline-block;
@@ -101,7 +91,6 @@
             color: #1b6b56;
             margin-bottom: 20px;
         }
-
         .hero-content h1 {
             font-size: 3.2rem;
             font-weight: 800;
@@ -109,20 +98,17 @@
             margin-bottom: 20px;
             color: #0a2a38;
         }
-
         .hero-content p {
             font-size: 1.15rem;
             color: #2c4b5e;
             margin-bottom: 32px;
             max-width: 90%;
         }
-
         .btn-group {
             display: flex;
             gap: 16px;
             flex-wrap: wrap;
         }
-
         .btn-primary {
             background: #1e5a4c;
             color: white;
@@ -137,13 +123,10 @@
             text-decoration: none;
             display: inline-block;
         }
-
         .btn-primary:hover {
             background: #134b3f;
             transform: scale(0.98);
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
         }
-
         .btn-outline {
             background: transparent;
             border: 1.5px solid #1e5a4c;
@@ -154,17 +137,13 @@
             cursor: pointer;
             transition: 0.2s;
         }
-
         .btn-outline:hover {
             background: #1e5a4c10;
-            border-color: #134b3f;
         }
-
         .hero-image {
             flex: 1;
             text-align: center;
         }
-
         .hero-image i {
             font-size: 14rem;
             color: #cbdde6;
@@ -173,8 +152,6 @@
             border-radius: 60px;
             box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1);
         }
-
-        /* stats section */
         .stats {
             display: flex;
             justify-content: space-between;
@@ -187,25 +164,20 @@
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.03);
             border: 1px solid #eef2f6;
         }
-
         .stat-item {
             text-align: center;
             flex: 1;
         }
-
         .stat-number {
             font-size: 2.2rem;
             font-weight: 800;
             color: #1e5a4c;
         }
-
         .stat-label {
             font-size: 0.9rem;
             color: #547b8c;
             margin-top: 6px;
         }
-
-        /* features grid */
         .section-title {
             text-align: center;
             font-size: 2rem;
@@ -213,14 +185,12 @@
             margin: 60px 0 30px;
             color: #123c48;
         }
-
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 30px;
             margin-bottom: 50px;
         }
-
         .feature-card {
             background: white;
             padding: 30px 20px;
@@ -230,30 +200,15 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.02);
             border: 1px solid #eef2f6;
         }
-
         .feature-card:hover {
             transform: translateY(-6px);
             box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.1);
-            border-color: #cbe2da;
         }
-
         .feature-icon {
             font-size: 2.8rem;
             color: #2b7a62;
             margin-bottom: 18px;
         }
-
-        .feature-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 12px;
-        }
-
-        .feature-card p {
-            color: #4a6675;
-            font-size: 0.95rem;
-        }
-
-        /* interactive demo (JS counter) */
         .demo-box {
             background: linear-gradient(125deg, #eef5f2, #ffffff);
             border-radius: 40px;
@@ -263,12 +218,6 @@
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
             border: 1px solid #dde5e1;
         }
-
-        .demo-box h3 {
-            font-size: 1.8rem;
-            margin-bottom: 12px;
-        }
-
         .interactive-area {
             display: flex;
             align-items: center;
@@ -277,7 +226,6 @@
             flex-wrap: wrap;
             margin-top: 20px;
         }
-
         .counter-display {
             background: #1e3a4d;
             color: white;
@@ -287,9 +235,7 @@
             border-radius: 60px;
             min-width: 150px;
             font-family: monospace;
-            letter-spacing: 2px;
         }
-
         .btn-icon {
             background: #ffffff;
             border: none;
@@ -299,25 +245,8 @@
             border-radius: 50%;
             cursor: pointer;
             box-shadow: 0 5px 12px rgba(0,0,0,0.1);
-            transition: 0.1s linear;
             color: #1e5a4c;
         }
-
-        .btn-icon:active {
-            transform: scale(0.94);
-        }
-
-        .reset-btn {
-            background: #cfdfd9;
-            color: #1e4b3e;
-            padding: 12px 28px;
-            border-radius: 40px;
-            border: none;
-            font-weight: 600;
-            cursor: pointer;
-        }
-
-        /* footer */
         footer {
             background: #0a242f;
             color: #cbdae2;
@@ -325,7 +254,6 @@
             margin-top: 70px;
             border-radius: 40px 40px 0 0;
         }
-
         .footer-content {
             display: flex;
             justify-content: space-between;
@@ -333,24 +261,6 @@
             gap: 30px;
             align-items: center;
         }
-
-        .footer-logo {
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: white;
-        }
-
-        .footer-links a {
-            color: #b9d0db;
-            text-decoration: none;
-            margin: 0 12px;
-            transition: 0.2s;
-        }
-
-        .footer-links a:hover {
-            color: white;
-        }
-
         .copyright {
             text-align: center;
             margin-top: 35px;
@@ -358,324 +268,232 @@
             border-top: 1px solid #2c4a58;
             padding-top: 25px;
         }
-
         @media (max-width: 760px) {
-            .hero-content h1 {
-                font-size: 2.3rem;
-            }
-            .navbar {
-                flex-direction: column;
-                gap: 16px;
-            }
-            .nav-links {
-                gap: 24px;
-            }
-            .hero-image i {
-                font-size: 8rem;
-            }
-            .counter-display {
-                font-size: 2rem;
-                padding: 12px 24px;
-            }
+            .hero-content h1 { font-size: 2.3rem; }
+            .navbar { flex-direction: column; gap: 16px; }
+            .hero-image i { font-size: 8rem; }
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <!-- header navigation -->
-    <div class="navbar">
-        <div class="logo">
-            <i class="fas fa-cube"></i> أفق<span style="color:#2b7a62">تك</span>
-        </div>
-        <ul class="nav-links">
-            <li><a href="#">الرئيسية</a></li>
-            <li><a href="#">المميزات</a></li>
-            <li><a href="#">المشاريع</a></li>
-            <li><a href="#">تواصل</a></li>
-        </ul>
-    </div>
+    <!-- Mayor Captcha -->
+    <div id="mayor-captcha"></div>
+    <input type="hidden" name="captcha_token" id="captcha_token" />
 
-    <!-- hero main section -->
-    <div class="hero">
-        <div class="hero-content">
-            <div class="hero-badge">
-                <i class="fas fa-bolt"></i> حلول ذكية للمستقبل
-            </div>
-            <h1>ابتكار رقمي <br> يبدأ من هنا</h1>
-            <p>منصة متكاملة تقدم تجربة سلسة، أداء استثنائي، وتصاميم حديثة. نصنع الفرق لعلامتك التجارية بكل احترافية.</p>
-            <div class="btn-group">
-                <button class="btn-primary" id="exploreBtn"><i class="fas fa-rocket"></i> استكشف الآن</button>
-                <button class="btn-outline" id="contactTrigger"><i class="fas fa-comment-dots"></i> تواصل معنا</button>
-            </div>
-        </div>
-        <div class="hero-image">
-            <i class="fas fa-chalkboard-user"></i>
-        </div>
-    </div>
-
-    <!-- stats row (dynamic js later) -->
-    <div class="stats">
-        <div class="stat-item">
-            <div class="stat-number" id="statProjects">0</div>
-            <div class="stat-label">مشاريع منجزة</div>
-        </div>
-        <div class="stat-item">
-            <div class="stat-number" id="statClients">0</div>
-            <div class="stat-label">عملاء موثوقون</div>
-        </div>
-        <div class="stat-item">
-            <div class="stat-number" id="statExperience">0</div>
-            <div class="stat-label">سنوات من الخبرة</div>
-        </div>
-    </div>
-
-    <!-- features section -->
-    <h2 class="section-title"><i class="fas fa-crown"></i> لماذا تختار منصتنا؟</h2>
-    <div class="features-grid">
-        <div class="feature-card">
-            <div class="feature-icon"><i class="fas fa-bolt"></i></div>
-            <h3>أداء فائق</h3>
-            <p>سرعة استثنائية وتجربة مستخدم سلسة تعتمد على أحدث التقنيات.</p>
-        </div>
-        <div class="feature-card">
-            <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
-            <h3>أمان متقدم</h3>
-            <p>حماية بياناتك بأعلى معايير الأمان والتشفير الشامل.</p>
-        </div>
-        <div class="feature-card">
-            <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
-            <h3>استجابة كاملة</h3>
-            <p>تصاميم متجاوبة مع جميع الأجهزة والشاشات المختلفة.</p>
-        </div>
-        <div class="feature-card">
-            <div class="feature-icon"><i class="fas fa-headset"></i></div>
-            <h3>دعم 24/7</h3>
-            <p>فريق دعم جاهز للإجابة عن استفساراتك على مدار الساعة.</p>
-        </div>
-    </div>
-
-    <!-- interactive javascript demo (counter with live feedback) -->
-    <div class="demo-box">
-        <h3><i class="fas fa-hand-peace"></i> تفاعل مباشر</h3>
-        <p>اختبر العدّاد التفاعلي — زيادة أو إنقاص مع تحديث فوري</p>
-        <div class="interactive-area">
-            <button class="btn-icon" id="decrementBtn" aria-label="إنقاص"><i class="fas fa-minus"></i></button>
-            <div class="counter-display" id="dynamicCounter">0</div>
-            <button class="btn-icon" id="incrementBtn" aria-label="زيادة"><i class="fas fa-plus"></i></button>
-        </div>
-        <button class="reset-btn" id="resetCounterBtn" style="margin-top: 25px;"><i class="fas fa-undo-alt"></i> إعادة تعيين</button>
-        <p style="margin-top: 18px; font-size: 0.8rem; color: #5c7f8c;"><i class="fas fa-chart-line"></i> تم التحديث لحظة بلحظة — تجربة تفاعلية سلسة</p>
-    </div>
-</div>
-
-<!-- footer -->
-<footer>
     <div class="container">
-        <div class="footer-content">
-            <div class="footer-logo"><i class="fas fa-cube"></i> أفقك الرقمي</div>
-            <div class="footer-links">
-                <a href="#">عن المنصة</a>
-                <a href="#">الخصوصية</a>
-                <a href="#">الشروط</a>
-                <a href="#">المدونة</a>
+        <!-- Navbar -->
+        <div class="navbar">
+            <div class="logo">
+                <i class="fas fa-cube"></i> أفق<span style="color:#2b7a62">تك</span>
             </div>
-            <div>
-                <i class="fab fa-twitter"></i>   
-                <i class="fab fa-linkedin-in"></i>   
-                <i class="fab fa-instagram"></i>
+            <ul class="nav-links">
+                <li><a href="#">الرئيسية</a></li>
+                <li><a href="#">المميزات</a></li>
+                <li><a href="#">المشاريع</a></li>
+                <li><a href="#">تواصل</a></li>
+            </ul>
+        </div>
+
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-bolt"></i> حلول ذكية للمستقبل
+                </div>
+                <h1>ابتكار رقمي <br> يبدأ من هنا</h1>
+                <p>منصة متكاملة تقدم تجربة سلسة، أداء استثنائي، وتصاميم حديثة. نصنع الفرق لعلامتك التجارية بكل احترافية.</p>
+                <div class="btn-group">
+                    <button class="btn-primary" id="exploreBtn"><i class="fas fa-rocket"></i> استكشف الآن</button>
+                    <button class="btn-outline" id="contactTrigger"><i class="fas fa-comment-dots"></i> تواصل معنا</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <i class="fas fa-chalkboard-user"></i>
             </div>
         </div>
-        <div class="copyright">
-            © 2026 أفق تك — جميع الحقوق محفوظة. تم تصميم الموقع بكل بساطة واحترافية.
+
+        <!-- Stats -->
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number" id="statProjects">0</div>
+                <div class="stat-label">مشاريع منجزة</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="statClients">0</div>
+                <div class="stat-label">عملاء موثوقون</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="statExperience">0</div>
+                <div class="stat-label">سنوات من الخبرة</div>
+            </div>
+        </div>
+
+        <!-- Features -->
+        <h2 class="section-title"><i class="fas fa-crown"></i> لماذا تختار منصتنا؟</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+                <h3>أداء فائق</h3>
+                <p>سرعة استثنائية وتجربة مستخدم سلسة تعتمد على أحدث التقنيات.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                <h3>أمان متقدم</h3>
+                <p>حماية بياناتك بأعلى معايير الأمان والتشفير الشامل.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
+                <h3>استجابة كاملة</h3>
+                <p>تصاميم متجاوبة مع جميع الأجهزة والشاشات المختلفة.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-headset"></i></div>
+                <h3>دعم 24/7</h3>
+                <p>فريق دعم جاهز للإجابة عن استفساراتك على مدار الساعة.</p>
+            </div>
+        </div>
+
+        <!-- Interactive Demo -->
+        <div class="demo-box">
+            <h3><i class="fas fa-hand-peace"></i> تفاعل مباشر</h3>
+            <p>اختبر العدّاد التفاعلي — زيادة أو إنقاص مع تحديث فوري</p>
+            <div class="interactive-area">
+                <button class="btn-icon" id="decrementBtn"><i class="fas fa-minus"></i></button>
+                <div class="counter-display" id="dynamicCounter">0</div>
+                <button class="btn-icon" id="incrementBtn"><i class="fas fa-plus"></i></button>
+            </div>
+            <button class="reset-btn" id="resetCounterBtn" style="margin-top: 25px;"><i class="fas fa-undo-alt"></i> إعادة تعيين</button>
+            <p style="margin-top: 18px; font-size: 0.8rem; color: #5c7f8c;"><i class="fas fa-chart-line"></i> تم التحديث لحظة بلحظة</p>
         </div>
     </div>
-</footer>
 
-<!-- Analytics tracker script - placed before closing body tag as requested -->
-<script src="https://mayor-cloud.com/analytics/tracker.js" data-site-key="kseNIdKhWPwjRLlLsVvbdB0g1z27Jysu5I5oAPkS24" defer></script>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo"><i class="fas fa-cube"></i> أفقك الرقمي</div>
+                <div class="footer-links">
+                    <a href="#">عن المنصة</a>
+                    <a href="#">الخصوصية</a>
+                    <a href="#">الشروط</a>
+                    <a href="#">المدونة</a>
+                </div>
+                <div>
+                    <i class="fab fa-twitter"></i>   
+                    <i class="fab fa-linkedin-in"></i>   
+                    <i class="fab fa-instagram"></i>
+                </div>
+            </div>
+            <div class="copyright">
+                © 2026 أفق تك — جميع الحقوق محفوظة.
+            </div>
+        </div>
+    </footer>
 
-<!-- main interactive javascript (inline) -->
-<script>
-    (function() {
-        // ---------- STATS COUNTER ANIMATION (On Scroll or visible) ----------
-        const statProjects = document.getElementById('statProjects');
-        const statClients = document.getElementById('statClients');
-        const statExperience = document.getElementById('statExperience');
-        
-        // target values
-        const targets = {
-            projects: 184,
-            clients: 270,
-            experience: 12
-        };
-        
-        let animated = false;
-        
-        function animateNumbers() {
-            if (animated) return;
-            const rectProjects = statProjects?.getBoundingClientRect();
-            if (rectProjects && rectProjects.top < window.innerHeight - 100) {
-                animated = true;
-                // start counters animation
-                let startProjects = 0, startClients = 0, startExp = 0;
-                const duration = 1200; // ms
-                const stepTime = 20;
-                const steps = duration / stepTime;
-                const incrementProjects = targets.projects / steps;
-                const incrementClients = targets.clients / steps;
-                const incrementExp = targets.experience / steps;
-                let currentStep = 0;
-                const interval = setInterval(() => {
-                    currentStep++;
-                    let valProjects = Math.min(Math.floor(incrementProjects * currentStep), targets.projects);
-                    let valClients = Math.min(Math.floor(incrementClients * currentStep), targets.clients);
-                    let valExp = Math.min(Math.floor(incrementExp * currentStep), targets.experience);
-                    if (statProjects) statProjects.innerText = valProjects;
-                    if (statClients) statClients.innerText = valClients;
-                    if (statExperience) statExperience.innerText = valExp;
-                    if (currentStep >= steps) {
-                        statProjects.innerText = targets.projects;
-                        statClients.innerText = targets.clients;
-                        statExperience.innerText = targets.experience;
-                        clearInterval(interval);
-                    }
-                }, stepTime);
+    <!-- Mayor Captcha Initialization -->
+    <script>
+        MayorCaptcha.render('#mayor-captcha', {
+            siteKey: 'j3RYzdyLOl7oWNcZRZenKHUv2IHH3VhL9J3iy8tVGro',
+            theme: 'light',
+            callback: function(token) {
+                document.getElementById('captcha_token').value = token;
+                console.log('Mayor Captcha Token:', token);
             }
-        }
-        
-        // listen to scroll + load
-        window.addEventListener('scroll', animateNumbers);
-        window.addEventListener('load', animateNumbers);
-        // also call once after tiny delay in case already visible
-        setTimeout(animateNumbers, 300);
-        
-        // ---------- INTERACTIVE COUNTER (demo) ----------
-        let counterValue = 0;
-        const counterDisplay = document.getElementById('dynamicCounter');
-        const incBtn = document.getElementById('incrementBtn');
-        const decBtn = document.getElementById('decrementBtn');
-        const resetBtn = document.getElementById('resetCounterBtn');
-        
-        function updateCounterUI() {
-            if (counterDisplay) counterDisplay.innerText = counterValue;
-            // add subtle color feedback based on value
-            if (counterDisplay) {
+        });
+    </script>
+
+    <!-- Analytics Tracker -->
+    <script src="https://mayor-cloud.com/analytics/tracker.js" data-site-key="kseNIdKhWPwjRLlLsVvbdB0g1z27Jysu5I5oAPkS24" defer></script>
+
+    <!-- Main JavaScript -->
+    <script>
+        (function() {
+            // Stats Counter
+            const statProjects = document.getElementById('statProjects');
+            const statClients = document.getElementById('statClients');
+            const statExperience = document.getElementById('statExperience');
+            
+            const targets = { projects: 184, clients: 270, experience: 12 };
+            let animated = false;
+
+            function animateNumbers() {
+                if (animated) return;
+                if (statProjects.getBoundingClientRect().top < window.innerHeight - 100) {
+                    animated = true;
+                    let startP = 0, startC = 0, startE = 0;
+                    const duration = 1200;
+                    const stepTime = 20;
+                    const steps = duration / stepTime;
+                    
+                    const incP = targets.projects / steps;
+                    const incC = targets.clients / steps;
+                    const incE = targets.experience / steps;
+                    
+                    let step = 0;
+                    const interval = setInterval(() => {
+                        step++;
+                        if (statProjects) statProjects.innerText = Math.min(Math.floor(incP * step), targets.projects);
+                        if (statClients) statClients.innerText = Math.min(Math.floor(incC * step), targets.clients);
+                        if (statExperience) statExperience.innerText = Math.min(Math.floor(incE * step), targets.experience);
+                        
+                        if (step >= steps) {
+                            statProjects.innerText = targets.projects;
+                            statClients.innerText = targets.clients;
+                            statExperience.innerText = targets.experience;
+                            clearInterval(interval);
+                        }
+                    }, stepTime);
+                }
+            }
+
+            window.addEventListener('scroll', animateNumbers);
+            window.addEventListener('load', animateNumbers);
+            setTimeout(animateNumbers, 300);
+
+            // Interactive Counter
+            let counterValue = 0;
+            const counterDisplay = document.getElementById('dynamicCounter');
+            const incBtn = document.getElementById('incrementBtn');
+            const decBtn = document.getElementById('decrementBtn');
+            const resetBtn = document.getElementById('resetCounterBtn');
+
+            function updateCounter() {
+                counterDisplay.innerText = counterValue;
                 if (counterValue > 0) counterDisplay.style.background = "#1f6d5c";
                 else if (counterValue < 0) counterDisplay.style.background = "#9b4b3e";
                 else counterDisplay.style.background = "#1e3a4d";
             }
-        }
-        
-        if (incBtn) {
-            incBtn.addEventListener('click', () => {
-                counterValue++;
-                updateCounterUI();
-                // optional micro interaction: show console info (non intrusive)
-                console.log("Counter increased to", counterValue);
-            });
-        }
-        if (decBtn) {
-            decBtn.addEventListener('click', () => {
-                counterValue--;
-                updateCounterUI();
-                console.log("Counter decreased to", counterValue);
-            });
-        }
-        if (resetBtn) {
-            resetBtn.addEventListener('click', () => {
-                counterValue = 0;
-                updateCounterUI();
-                console.log("Counter reset to zero");
-            });
-        }
-        updateCounterUI(); // init
-        
-        // ---------- BUTTON INTERACTIONS (popup messages) ----------
-        const exploreButton = document.getElementById('exploreBtn');
-        const contactBtn = document.getElementById('contactTrigger');
-        
-        if (exploreButton) {
-            exploreButton.addEventListener('click', () => {
-                showFloatingMessage("✨ جاهز للانطلاق! استعد لتجربة رقمية مبتكرة", "#1e5a4c");
-            });
-        }
-        
-        if (contactBtn) {
-            contactBtn.addEventListener('click', () => {
-                showFloatingMessage("📞 تواصل مع فريق الدعم: support@ofouqtech.com", "#2c6e5c");
-            });
-        }
-        
-        // custom lightweight notification (appears and disappears)
-        function showFloatingMessage(msg, bgColor) {
-            // create div if not exists
-            let toast = document.createElement('div');
-            toast.innerText = msg;
-            toast.style.position = 'fixed';
-            toast.style.bottom = '30px';
-            toast.style.left = '50%';
-            toast.style.transform = 'translateX(-50%)';
-            toast.style.backgroundColor = bgColor;
-            toast.style.color = 'white';
-            toast.style.padding = '12px 28px';
-            toast.style.borderRadius = '60px';
-            toast.style.fontWeight = '500';
-            toast.style.fontSize = '0.95rem';
-            toast.style.zIndex = '9999';
-            toast.style.boxShadow = '0 12px 20px rgba(0,0,0,0.2)';
-            toast.style.backdropFilter = 'blur(2px)';
-            toast.style.fontFamily = "'Inter', sans-serif";
-            toast.style.direction = 'rtl';
-            document.body.appendChild(toast);
-            setTimeout(() => {
-                toast.style.opacity = '0';
-                toast.style.transition = 'opacity 0.4s ease';
-                setTimeout(() => {
-                    if (toast && toast.remove) toast.remove();
-                }, 400);
-            }, 2500);
-        }
-        
-        // small smooth scroll for anchor links if any (optional internal)
-        const navLinks = document.querySelectorAll('.nav-links a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                const href = link.getAttribute('href');
-                if (href && href !== '#' && href.startsWith('#')) {
-                    e.preventDefault();
-                    const targetId = href.substring(1);
-                    const targetEl = document.getElementById(targetId);
-                    if (targetEl) {
-                        targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                } else if (href === '#') {
-                    e.preventDefault();
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                }
-            });
-        });
-        
-        // add small hover effect for feature cards additional
-        const cards = document.querySelectorAll('.feature-card');
-        cards.forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                card.style.transition = 'all 0.25s';
-            });
-        });
-        
-        // Dynamic year for footer
-        const copyrightDiv = document.querySelector('.copyright');
-        if (copyrightDiv) {
-            const currentYear = new Date().getFullYear();
-            if (copyrightDiv.innerText.includes('2026')) {
-                copyrightDiv.innerText = copyrightDiv.innerText.replace('2026', currentYear);
+
+            incBtn.addEventListener('click', () => { counterValue++; updateCounter(); });
+            decBtn.addEventListener('click', () => { counterValue--; updateCounter(); });
+            resetBtn.addEventListener('click', () => { counterValue = 0; updateCounter(); });
+
+            // Buttons Messages
+            const exploreBtn = document.getElementById('exploreBtn');
+            const contactBtn = document.getElementById('contactTrigger');
+
+            function showMessage(msg, color) {
+                const toast = document.createElement('div');
+                toast.innerText = msg;
+                toast.style.position = 'fixed';
+                toast.style.bottom = '30px';
+                toast.style.left = '50%';
+                toast.style.transform = 'translateX(-50%)';
+                toast.style.backgroundColor = color;
+                toast.style.color = 'white';
+                toast.style.padding = '12px 28px';
+                toast.style.borderRadius = '60px';
+                toast.style.zIndex = '9999';
+                toast.style.boxShadow = '0 12px 20px rgba(0,0,0,0.2)';
+                document.body.appendChild(toast);
+                setTimeout(() => toast.remove(), 2800);
             }
-        }
-        
-        // Log that analytics script is placed before body closing tag
-        console.log("✅ موقع بسيط يعمل بكفاءة | Analytics script موجود قبل إغلاق body");
-    })();
-</script>
+
+            exploreBtn.addEventListener('click', () => showMessage("✨ جاهز للانطلاق! استعد لتجربة رقمية مبتكرة", "#1e5a4c"));
+            contactBtn.addEventListener('click', () => showMessage("📞 تواصل مع فريق الدعم: support@ofouqtech.com", "#2c6e5c"));
+
+        })();
+    </script>
 </body>
 </html>
